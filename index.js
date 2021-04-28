@@ -4,10 +4,7 @@ const refs = {
     hours: document.querySelector('span[data-value="hours"]'),
     mins: document.querySelector('span[data-value="mins"]'),
     secs: document.querySelector('span[data-value="secs"]'),
-}
-
-
-
+};
 
 class CountdownTimer {
     constructor({ selector, targetDate }) {
@@ -22,9 +19,7 @@ class CountdownTimer {
             const time = this.getTimeComponents(timeLeft);
             this.updateTimer(time);
         }, 1000)
-    };
-
-    
+    };    
 
     getTimeComponents(time) {
         const days = this.pad(Math.floor(time / (1000 * 60 * 60 * 24)));          
@@ -52,4 +47,3 @@ const timer = new CountdownTimer({
 });
 
 timer.start();
-
